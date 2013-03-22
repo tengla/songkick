@@ -1,0 +1,9 @@
+.autotest.erb
+History.txt
+Manifest.txt
+README.md
+Rakefile
+bin/songkick
+lib/songkick.rb
+lib/songkick/songkick.rb
+test/test_songkick.rb
