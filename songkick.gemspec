@@ -4,7 +4,7 @@ require File.expand_path('../lib/songkick/version', __FILE__)
 
 Gem::Specification.new do |gem|
   gem.authors       = ["Thomas Eng"]
-  gem.email         = ["thomas.tinnesand.eng@gmail.com"]
+  gem.email         = [ ENV["EMAIL"] ]
   gem.description   = %q{Ruby Songkick API}
   gem.summary       = %q{Ruby access to Songkick API version 3.0}
   gem.homepage      = "https://github.com/athlite/songkick"
@@ -16,5 +16,4 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = Songkick::VERSION
   gem.add_dependency('json')
-  gem.add_dependency('pry')
 end
