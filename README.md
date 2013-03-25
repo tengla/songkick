@@ -1,6 +1,7 @@
 # Songkick
 
-TODO: Ruby Songkick API version 3.0
+Ruby Songkick API version 3.0
+PS: Not in a usable state!
 
 ## Installation
 
