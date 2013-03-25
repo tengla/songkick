@@ -1,4 +1,4 @@
-class Songkick::Location
+class Songkick::Api::Location
   attr_accessor :client
   include Songkick::InstanceMethods
   extend  Songkick::ClassMethods

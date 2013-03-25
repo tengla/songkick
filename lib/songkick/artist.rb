@@ -1,3 +1,0 @@
-class Songkick::Artist
-  
-end
