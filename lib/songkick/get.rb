@@ -1,3 +1,4 @@
+
 class Songkick::Get
 
   class << self

@@ -1,4 +1,4 @@
-class Songkick
+module Songkick
   module ClassMethods
     
     def base_url=(url)

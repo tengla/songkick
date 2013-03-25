@@ -1,4 +1,4 @@
-class Songkick
+module Songkick
   module InstanceMethods
     def initialize(client)
       @client = client
