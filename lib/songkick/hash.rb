@@ -5,7 +5,7 @@ class Hash
       obj[key]
     elsif obj.respond_to?(:each)
       r = nil
-      obj.find{ |*a| r=deep_fetch(key, a.last) }
+      obj.find{ |*a| r = deep_fetch(key, a.last) }
       r
     end
   end

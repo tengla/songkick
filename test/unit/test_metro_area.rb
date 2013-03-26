@@ -6,9 +6,9 @@ class TestMetroArea < MiniTest::Unit::TestCase
     @client = Songkick::Client.new SONGKICK_API_KEY
   end
 
-  def test_upcoming_events
-    VCR.use_cassette('metro_area_upcoming_events') do
-      result = @client.metro_area.upcoming_events(31422)
+  def test_calendar
+    VCR.use_cassette('metro_area_calendar') do
+      result = @client.metro_area.calendar(31422) # Oslo
       assert_equal "ok", result.deep_fetch("status")
     end
   end
