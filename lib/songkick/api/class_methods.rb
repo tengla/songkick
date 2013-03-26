@@ -3,8 +3,14 @@ module Songkick
 
     module ClassMethods
 
-      def base_url(url=nil)
-        url && (@base_url = url) || @base_url
+      def base_url(key, url=nil)
+        @base_urls ||= {}
+        if url
+          @base_urls[key] = url
+        else
+          @base_urls[key]
+        end
+        @base_urls[key]
       end
 
     end

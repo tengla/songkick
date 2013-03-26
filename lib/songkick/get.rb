@@ -2,12 +2,16 @@
 class Songkick::Get
 
   class << self
-
-    def raw(url, hash)
+    
+    def replace_keys(url, hash)
       hash.each do |key,value|
         url = url.gsub(/-#{key}-/,value)
       end
-      open(url).read
+      url
+    end
+
+    def raw(url, hash)
+      open( replace_keys(url, hash) ).read
     end
 
     def json(*args)
