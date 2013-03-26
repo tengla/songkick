@@ -2,8 +2,12 @@ require 'open-uri'
 require 'json'
 require "songkick/string"
 require "songkick/version"
-require "songkick/common/class_methods"
-require "songkick/common/instance_methods"
+require "songkick/hash"
+require "songkick/api/class_methods"
+require "songkick/api/instance_methods"
+require 'songkick/api/metro_area'
+require 'songkick/api/location'
+require 'songkick/api/artist'
 require "songkick/get"
 require "songkick/api"
 require "songkick/client"

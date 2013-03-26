@@ -3,16 +3,16 @@ class Songkick::Get
 
   class << self
 
-    def raw(url, keys_values)
-      keys_values.each do |k,v|
-        url = url.gsub(/-#{k}-/,v)
+    def raw(url, hash)
+      hash.each do |key,value|
+        url = url.gsub(/-#{key}-/,value)
       end
       open(url).read
     end
 
     def json(*args)
       result = raw(*args)
-      hash = JSON.parse( result )
+      JSON.parse( result )
     end
 
   end
