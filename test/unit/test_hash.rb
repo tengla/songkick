@@ -1,5 +1,4 @@
-require 'minitest/autorun'
-require 'songkick'
+require './test/test_helper'
 
 class TestHash < MiniTest::Unit::TestCase
   
@@ -11,7 +10,7 @@ class TestHash < MiniTest::Unit::TestCase
     assert @hash.respond_to?(:deep_fetch)
   end
 
-  def test_should_fetch_f
+  def test_should_deep_fetch_f
     assert_equal "F", @hash.deep_fetch("f")
   end
 

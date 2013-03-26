@@ -4,6 +4,6 @@ require 'rake/testtask'
 
 Rake::TestTask.new do |t|
   t.libs << "lib"
-  t.test_files = FileList['test/test*.rb']
+  t.test_files = FileList['test/unit/test*.rb']
   t.verbose = true
 end

@@ -1,15 +1,12 @@
 class Hash
-
-  def deep_fetch(key, hash=self)
-    hash.keys.each do |k|
-      p hash.has_key?(k)
-      return hash[k] if hash.has_key?(k)
-      if hash[k].is_a?(Array)
-        hash[k].each do |item|
-          return deep_fetch(key, item) if item.is_a?(Hash)
-        end
-      end
-      return deep_fetch(key, hash[k])
+  
+  def deep_fetch(key,obj=self)
+    if obj.respond_to?(:key?) && obj.key?(key)
+      obj[key]
+    elsif obj.respond_to?(:each)
+      r = nil
+      obj.find{ |*a| r=deep_fetch(key, a.last) }
+      r
     end
   end
 
