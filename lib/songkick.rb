@@ -5,6 +5,7 @@ require "songkick/version"
 require "songkick/hash"
 require "songkick/api/class_methods"
 require "songkick/api/instance_methods"
+require "songkick/api/base"
 require 'songkick/api/metro_area'
 require 'songkick/api/location'
 require 'songkick/api/venue'

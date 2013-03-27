@@ -3,6 +3,7 @@ class Songkick::Client
   attr_accessor :api_key
   
   def initialize(api_key)
+    raise "api_key not set" if api_key.nil?
     @api_key = api_key
   end
 

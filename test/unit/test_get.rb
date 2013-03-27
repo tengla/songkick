@@ -19,7 +19,7 @@ class TestGet < MiniTest::Unit::TestCase
   def test_json
     client = Songkick::Client.new SONGKICK_API_KEY
     VCR.use_cassette('get_json') do
-      result = Songkick::Get.json( Songkick::Api::Location.base_url(:search), :query => "Oslo", :api_key => client.api_key)
+      result = Songkick::Get.json( Songkick::Api::Location.songkick(:search), :query => "Oslo", :api_key => client.api_key)
       assert_equal "ok", result["resultsPage"]["status"]
     end
   end

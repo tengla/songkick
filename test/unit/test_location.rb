@@ -8,8 +8,8 @@ class TestLocation < MiniTest::Unit::TestCase
 
   def test_search
     VCR.use_cassette('location_search') do
-      result = @client.location.search("Oslo")
-      assert_equal 31422, result.deep_fetch("id")
+      result = @client.location.search(:query => "Oslo")
+      assert_equal [31422], result.deep_fetch("id")
     end
   end
 

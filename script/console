@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+if test -z "$SONGKICK_API_KEY"; then
+  echo "Error: SONGKICK_API_KEY must be set"
+  exit
+else
+  bundle exec pry -r songkick -e "ENV['SONGKICK_API_KEY'] && @client = Songkick::Client.new(ENV['SONGKICK_API_KEY'])"
+fi

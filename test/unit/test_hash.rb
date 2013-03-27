@@ -11,7 +11,7 @@ class TestHash < MiniTest::Unit::TestCase
   end
 
   def test_should_deep_fetch_f
-    assert_equal "F", @hash.deep_fetch("f")
+    assert_equal ["F"], @hash.deep_fetch("f")
   end
 
 end
