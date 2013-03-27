@@ -8,8 +8,10 @@
 
     class Event < Songkick::Api::Base
       # Take a look at Songkick api endpoint uri's for more info
-      # Notice that the key names must match those you provide in hash
+      # Notice that the key,value names in the uri must match those you provide in hash
       # when calling.
+      # Use a dash, before and after, the value to be substituted.
+      # Like so: artist_name=-artist_name-
       songkick :search, 'http://api.songkick.com/api/3.0/events.json?artist_name=-artist_name-&location=-location-&apikey=-api_key-'
     end
     client = Songkick::Client.new "apikey"
