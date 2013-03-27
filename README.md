@@ -14,3 +14,18 @@
     event  = Event.new( client )
     result = event.search :artist_name => "The Pixies", :location => "ip:127.0.0.1"
 
+Alternatively, for those that are implemented:
+
+    client = Songkick::Client.new("apikey")
+    result = client.location.search :query => "Oslo, Norway"
+
+If you want your own classes to be accessible under a Client instance, define them like this:
+
+    class Songkick::Api::Location
+      include Songkick::Api::InstanceMethods
+      extend  Songkick::Api::ClassMethods
+      # search :query => 'what?'
+      songkick :search, 'http://api.songkick.com/api/3.0/search/locations.json?query=-query-&apikey=-api_key-'
+    end
+    
+instead of subclassing Base
