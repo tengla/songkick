@@ -3,14 +3,12 @@ module Songkick
     module ClassMethods
 
       def songkick(key, url=nil)
-        @base_urls ||= {}
+        @songkick_uris ||= {}
         if url
-          @base_urls[key] = url
+          @songkick_uris[key] = url
           songkick_create_method(key)
-        else
-          @base_urls[key]
         end
-        @base_urls[key]
+        @songkick_uris[key]
       end
 
       private
