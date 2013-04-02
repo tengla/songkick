@@ -3,10 +3,10 @@ module Songkick::Api
   class MetroArea
     
     # i.e. calendar :metro_area_id => 123
-    songkick :calendar, 'metro_areas/:metro_area_id/calendar.:format'
+    songkick :calendar, 'metro_areas/:metro_area_id/calendar.:format', :page, :per_page
     
     def post_process_calendar(result)
-      Songkick::LazyObject.new(result)
+      Songkick::LazyObject.new(result['resultsPage'])
     end
     
   end

@@ -4,8 +4,7 @@ class Songkick::Api::Artist
   songkick :search, 'search/artists.:format', :query
   
   def post_process_calendar(result)
-    @result = result
-    Songkick::LazyObject.new(@result['resultsPage'])
+    Songkick::LazyObject.new(result).results_page
   end
 
 end
