@@ -1,3 +1,4 @@
+require 'erb'
 class Hash
   
   def deep_fetch(key,obj=self)
@@ -15,5 +16,4 @@ class Hash
     end
     aggr.flatten
   end
-
 end

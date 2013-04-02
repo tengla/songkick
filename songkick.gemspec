@@ -16,6 +16,7 @@ Gem::Specification.new do |gem|
   gem.version       = Songkick::VERSION
 
   gem.add_dependency('json')
+  gem.add_dependency('nokogiri')
   gem.add_dependency('bundler')
   gem.add_dependency('vcr')
   gem.add_dependency('webmock', '1.8.0')

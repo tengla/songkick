@@ -1,31 +1,47 @@
-require 'erb'
+require 'uri'
 class Songkick::Get
 
   class << self
     
     attr_accessor :debug
 
-    def replace_keys(url, hash)
-      hash.each do |key,value|
-        url = url.gsub(/-#{key}-/, ERB::Util.url_encode(value) )
+    def add_params(uri, params)
+
+      _params = params.dup # no side effects!?
+      
+      _params.each do |key,value|
+        if uri.match(/-#{key}-/) && value
+          uri = uri.gsub(/-#{key}-/, URI.encode( _params.delete(key).to_s ) )
+        end
       end
-      if hash.key?(:page)
-        url << "&page=#{hash[:page]}"
+
+      uri = URI(uri)
+
+      if _params.key?(:page)
+        uri << "&page=#{hash[:page]}"
       end
-      url
+      uri
     end
 
-    def raw(url, hash)
-      _url = replace_keys(url, hash)
-      ['url','_url','hash'].each do |lv|
-        p instance_eval(lv)
-      end if @debug  
-      open( _url ).read
+    def raw(uri)
+      begin
+        open( uri ).read
+      rescue Exception => e 
+        puts e.message
+        puts uri
+        raise "could not get resource"
+      end
     end
     
-    def json(*args)
-      result = raw(*args)
+    def json(uri)
+      result = raw(uri)
       JSON.parse( result )
     end
+    
+    def xml(uri)
+      result = raw(uri)
+      Nokogiri::XML.parse( result )
+    end
+
   end
 end
