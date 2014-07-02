@@ -4,6 +4,7 @@ class String
     self.split("_").map( &:capitalize ).join
   end
 
+  # courtesy of Rails/ActiveSupport :-D
   def underscore
     self.gsub(/::/, '/').
     gsub(/([A-Z]+)([A-Z][a-z])/,'\1_\2').

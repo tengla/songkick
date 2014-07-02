@@ -1,5 +1,13 @@
 module Songkick
   module Api
+    autoload :ClassMethods,     'songkick/api/class_methods'
+    autoload :InstanceMethods,  'songkick/api/instance_methods'
+    autoload :Base,             'songkick/api/base'
+    autoload :MetroArea,        'songkick/api/metro_area'
+    autoload :Location,         'songkick/api/location'
+    autoload :Venue,            'songkick/api/venue'
+    autoload :Artist,           'songkick/api/artist'
+    autoload :Event,            'songkick/api/event'
   end
 end
 
@@ -13,10 +21,3 @@ class Object
     end
   end
 end
-
-require 'songkick/api/base'
-require 'songkick/api/metro_area'
-require 'songkick/api/location'
-require 'songkick/api/venue'
-require 'songkick/api/artist'
-require 'songkick/api/event'
