@@ -1,6 +1,6 @@
 require './test/test_helper'
 
-class TestString < MiniTest::Unit::TestCase
+class TestString < Minitest::Test
   
   def test_camelize
     assert_equal "MyTestClass", "my_test_class".camelize

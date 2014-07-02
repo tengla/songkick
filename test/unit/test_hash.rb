@@ -1,6 +1,6 @@
 require './test/test_helper'
 
-class TestHash < MiniTest::Unit::TestCase
+class TestHash < Minitest::Test
   
   def setup
     @hash = {"a" => "A", "b" => [{"c" => "C", "d" => "D", "e" => [{"f" => "F", "g" => "G"}] }], "h" => "H"}

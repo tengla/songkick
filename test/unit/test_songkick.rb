@@ -1,6 +1,6 @@
 require './test/test_helper'
 
-class TestSongkick < MiniTest::Unit::TestCase
+class TestSongkick < Minitest::Test
   
   def test_api_key
     client = Songkick::Client.new("abc")

@@ -1,6 +1,6 @@
 require './test/test_helper'
 
-class TestGet < MiniTest::Unit::TestCase
+class TestGet < Minitest::Test
   
   def test_add_params
     url = "http://www.example.com/?a=-a-&b=-b-"

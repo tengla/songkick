@@ -19,9 +19,12 @@ Gem::Specification.new do |gem|
   gem.add_dependency('nokogiri')
   gem.add_dependency('bundler')
   gem.add_dependency('vcr')
-  gem.add_dependency('webmock', '1.8.0')
+  gem.add_dependency('webmock')
 
   # This is for being able to run 'bundle exec pry'
   # on the cli
   gem.add_dependency('pry')
+  
+  gem.add_dependency('rake', '~> 10.3.2')
+  gem.add_dependency('minitest', '~> 5.3.5')
 end

@@ -5,7 +5,7 @@ class Person
   songkick :a_test, "a_test"
 end
 
-class TestClassMethods < MiniTest::Unit::TestCase
+class TestClassMethods < Minitest::Test
   
   def test_base_url
     assert_equal "http://api.songkick.com/api/3.0/", Person.base_url

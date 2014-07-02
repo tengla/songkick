@@ -1,6 +1,6 @@
 require './test/test_helper'
 
-class TestLocation < MiniTest::Unit::TestCase
+class TestLocation < Minitest::Test
   
   def setup
     @client = Songkick::Client.new SONGKICK_API_KEY
