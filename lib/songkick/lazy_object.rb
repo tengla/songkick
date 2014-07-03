@@ -1,6 +1,8 @@
 
 class Songkick::LazyObject < OpenStruct
   
+  using StringExt
+
   def initialize(obj)
     
     tmp = {}

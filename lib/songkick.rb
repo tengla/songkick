@@ -2,7 +2,7 @@ require 'open-uri'
 require 'json'
 require 'nokogiri'
 
-require 'songkick/string'
+require 'songkick/string_ext'
 require 'songkick/hash'
 
 module Songkick

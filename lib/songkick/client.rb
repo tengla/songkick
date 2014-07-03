@@ -1,5 +1,7 @@
 class Songkick::Client
   
+  using StringExt
+
   attr_accessor :api_key
   
   def initialize(api_key)
