@@ -3,7 +3,7 @@ require 'json'
 require 'nokogiri'
 
 require 'songkick/string_ext'
-require 'songkick/hash'
+require 'songkick/hash_ext'
 
 module Songkick
   autoload :VERSION,    'songkick/version'
