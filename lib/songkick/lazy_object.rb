@@ -27,5 +27,17 @@ class Songkick::LazyObject < OpenStruct
       !meth.to_s.match(/\=\Z/)
     end
   end
+  
+  def inspect
+    buf = []
+    keys.each do |key|
+      if self[key].is_a?(Songkick::LazyObject)
+        buf << "#{key}: {#{self[key].inspect}}"
+      else
+        buf << "#{key}: #{self[key].inspect}"
+      end
+    end
+    buf.join(", ")
+  end
 
 end
